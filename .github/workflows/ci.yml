@@ -218,6 +218,12 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "build_time=$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M CST')" >> $GITHUB_OUTPUT
 
+      - name: 清理已存在的 Release（避免重复 assets）
+        run: |
+          gh release delete "${{ github.ref_name }}" --yes 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: 创建 Release
         uses: softprops/action-gh-release@v2
         with:
