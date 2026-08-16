@@ -2,6 +2,8 @@
 
 **微信多后端代理网关** — 解决微信机器人只能绑定一个后端的问题。
 
+> **完整文档：[docs/USER_GUIDE.md](docs/USER_GUIDE.md)** — 包含安装、配置、管理、API 参考等详细说明。
+
 通过 iLink 协议接入微信，支持同时连接多个 AI 后端（Hermes、OpenClaw、DeepSeek 等），用户可通过命令切换后端。
 
 ---
